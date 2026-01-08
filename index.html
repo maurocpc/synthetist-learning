@@ -65,6 +65,29 @@
             color: #777;
             font-size: 14px;
         }
+
+        button {
+            background-color: #4A74AD;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3a5f8d;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #4A74AD;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -75,19 +98,43 @@
 
         <h2>About Me</h2>
         <ul>
-            <li>Playing videogames</li>
+            <li>Playing video games</li>
             <li>Watching TV series</li>
             <li>Reading</li>
         </ul>
 
         <h2>My Goals</h2>
-         <p> - Being capable of building any type of app.</p>
-         <p> - Getting a goog job in a great tech company.</p>
-         <p> - Working from home.</p>
+        <ul>
+            <li>Being capable of building any type of app.</li>
+            <li>Getting a good job in a great tech company.</li>
+            <li>Working from home.</li>
+        </ul>
+
+        <h2>Interactive Demo</h2>
+        <button id="clickMe">Click Me!</button>
+        <p id="output">Click the button to see magic happen ✨</p>
     </div>
 
     <footer>
         <p>Built by Mauro Cruz | Learning Full-Stack Development</p>
     </footer>
+
+    <script>
+        // Wait for the page to fully load.
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get references to HTML elements
+            const button = document.getElementById('clickMe');
+            const output = document.getElementById('output');
+
+            // Counter to track clicks
+            let clickCount = 0;
+
+            // Add click event listener
+            button.addEventListener('click', function() {
+                clickCount++;
+                output.textContent = `You've clicked the button ${clickCount} time(s)! 🎉`;
+            });
+        });
+    </script>
 </body>
 </html>
